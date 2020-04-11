@@ -1,0 +1,17 @@
+schema {
+	query: Query
+}
+
+type Query {
+	allPersons: [Person]
+	person(ssn: String): Person
+	byFirstName(firstName: String): Person
+	greaterThanAge(age: Int): [Person]
+}
+
+type Person {
+	ssn: String
+	firstName: String
+	lastName: String
+	age: Int
+}
