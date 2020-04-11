@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "e05ed7e4-7f7c-49c5-9833-1a76feef0617",
+		"name": "GraphQL",
+		"description": "GraphQL demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Persons",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\tallPersons {\n\t\tssn\n\t\tfirstName\n\t}\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/rest/persons",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"persons"
+					]
+				},
+				"description": "Get All Persons"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Persons Greater Than Age",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\tgreaterThanAge(age: 28) {\n\t\tssn\n\t\tfirstName\n\t}\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/rest/persons",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"persons"
+					]
+				},
+				"description": "Get Persons Greater Than Age"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Person By SSN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\tperson(ssn: \"1\") {\n\t\tfirstName\n\t\tlastName\n\t}\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/rest/persons",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"persons"
+					]
+				},
+				"description": "Get Person By SSN"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Person By First Name",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\tbyFirstName(firstName: \"Udit\") {\n\t\tssn\n\t\tfirstName\n\t\tlastName\n\t}\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/rest/persons",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest",
+						"persons"
+					]
+				},
+				"description": "Get Person By First Name"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
