@@ -1,5 +1,6 @@
 package com.udit.dbs;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,9 +12,28 @@ public class DatabaseManager {
 
 	static {
 		personMap = new HashMap<>();
-		personMap.put("1", new Person("1", "Udit", "Mishra", 30));
-		personMap.put("2", new Person("2", "Amit", "Jha", 28));
-		personMap.put("3", new Person("3", "Ashish", "Kumar", 29));
+		
+		Person udit = new Person("1", "Udit", "Mishra", 30, new ArrayList<>());
+		Person amit = new Person("2", "Amit", "Jha", 28, new ArrayList<>());
+		Person ashish = new Person("3", "Ashish", "Kumar", 31, new ArrayList<>());
+		Person sumit = new Person("4", "Sumit", "Sagar", 29, new ArrayList<>());
+		
+		udit.getFriends().add(amit);
+		udit.getFriends().add(ashish);
+		
+		amit.getFriends().add(udit);
+		amit.getFriends().add(sumit);
+		amit.getFriends().add(ashish);
+		
+		ashish.getFriends().add(udit);
+		ashish.getFriends().add(amit);
+		
+		sumit.getFriends().add(amit);
+		
+		personMap.put(udit.getSsn(), udit);
+		personMap.put(amit.getSsn(), amit);
+		personMap.put(ashish.getSsn(), ashish);
+		personMap.put(sumit.getSsn(), sumit);
 	}
 
 	public static Map<String, Person> getPersonMap() {

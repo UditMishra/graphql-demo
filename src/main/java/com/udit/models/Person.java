@@ -1,5 +1,7 @@
 package com.udit.models;
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -10,4 +12,5 @@ public class Person {
 	private String firstName;
 	private String lastName;
 	private int age;
+	private List<Person> friends;
 }

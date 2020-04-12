@@ -13,16 +13,15 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\tallPersons {\n\t\tssn\n\t\tfirstName\n\t}\n}"
+					"raw": "{\n\tallPersons {\n\t\tfirstName\n\t\tlastName\n\t\tfriends {\n\t\t\tfriendName: firstName\n\t\t\tfriendAge: age\n\t\t}\n\t}\n}"
 				},
 				"url": {
-					"raw": "localhost:8080/rest/persons",
+					"raw": "localhost:8080/persons",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"rest",
 						"persons"
 					]
 				},
@@ -37,16 +36,15 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\tgreaterThanAge(age: 28) {\n\t\tssn\n\t\tfirstName\n\t}\n}"
+					"raw": "{\n\tgreaterThanAge(age: 28) {\n\t\tfirstName\n\t\tage\n\t}\n}"
 				},
 				"url": {
-					"raw": "localhost:8080/rest/persons",
+					"raw": "localhost:8080/persons",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"rest",
 						"persons"
 					]
 				},
@@ -61,16 +59,15 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\tperson(ssn: \"1\") {\n\t\tfirstName\n\t\tlastName\n\t}\n}"
+					"raw": "{\n\tperson(ssn: \"2\") {\n\t\tsocial: ssn\n\t\tfirstName\n\t\tlastName\n\t}\n}"
 				},
 				"url": {
-					"raw": "localhost:8080/rest/persons",
+					"raw": "localhost:8080/persons",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"rest",
 						"persons"
 					]
 				},
@@ -85,20 +82,42 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\tbyFirstName(firstName: \"Udit\") {\n\t\tssn\n\t\tfirstName\n\t\tlastName\n\t}\n}"
+					"raw": "{\n\tbyFirstName(firstName: \"Sumit\") {\n\t\tssn\n\t\tfirstName\n\t\tlastName\n\t}\n}"
 				},
 				"url": {
-					"raw": "localhost:8080/rest/persons",
+					"raw": "localhost:8080/persons",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"rest",
 						"persons"
 					]
 				},
 				"description": "Get Person By First Name"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Mutual Friends",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\tmutualFriends(firstName1: \"Ashish\", firstName2: \"Amit\") {\n\t\ttype:__typename\n\t\tfirstName\n\t\tlastName\n\t}\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/persons",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"persons"
+					]
+				},
+				"description": "Get Mutual Friends"
 			},
 			"response": []
 		}

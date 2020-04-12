@@ -23,7 +23,7 @@ import lombok.Getter;
 @Service
 public class GraphQLService {
 
-	@Value("classpath:persons.graphql")
+	@Value("classpath:persons.graphqls")
 	Resource resource;
 
 	@Autowired
@@ -53,6 +53,7 @@ public class GraphQLService {
 										.dataFetcher("person", fetchers.getPersonBySSN())
 										.dataFetcher("byFirstName", fetchers.getPersonByFirstName())
 										.dataFetcher("greaterThanAge", fetchers.getPersonsGreaterThanAge())
+										.dataFetcher("mutualFriends", fetchers.getMutualFriends())
 					 )
 				.build();
 	}

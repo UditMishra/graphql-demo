@@ -28,5 +28,8 @@ public class Fetchers {
 	
 	@Getter
 	private DataFetcher<List<Person>> personsGreaterThanAge = env -> service.getPersonsGreaterThanAge(env.getArgument("age"));
+	
+	@Getter
+	private DataFetcher<List<Person>> mutualFriends = env -> service.getMutualFriends(env.getArgument("firstName1"), env.getArgument("firstName2"));
 
 }

@@ -7,11 +7,13 @@ type Query {
 	person(ssn: String): Person
 	byFirstName(firstName: String): Person
 	greaterThanAge(age: Int): [Person]
+	mutualFriends(firstName1: String, firstName2: String): [Person]
 }
 
 type Person {
-	ssn: String
+	ssn: ID!
 	firstName: String
 	lastName: String
 	age: Int
+	friends: [Person]
 }
