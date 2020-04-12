@@ -1,0 +1,13 @@
+schema {
+	query: Query
+}
+
+type Query {
+	allPersons: [Person]
+	person(ssn: String): Person
+	byFirstName(firstName: String): Person
+	greaterThanAge(age: Int): [Person]
+	mutualFriends(firstName1: String, firstName2: String): [Person]
+	allCats: [Cat]
+	allDogs: [Dog]
+}

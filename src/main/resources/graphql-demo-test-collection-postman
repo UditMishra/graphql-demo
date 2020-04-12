@@ -30,6 +30,52 @@
 			"response": []
 		},
 		{
+			"name": "Get All Cats",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\tallCats {\n\t\tsound\n\t\ttype\n\t}\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/animals",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"animals"
+					]
+				},
+				"description": "Get All Cats"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Dogs",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\tallDogs {\n\t\tclassification\n\t\tbreed\n\t}\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/animals",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"animals"
+					]
+				},
+				"description": "Get All Dogs"
+			},
+			"response": []
+		},
+		{
 			"name": "Get Persons Greater Than Age",
 			"request": {
 				"method": "POST",

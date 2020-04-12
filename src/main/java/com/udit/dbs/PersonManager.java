@@ -6,7 +6,7 @@ import java.util.Map;
 
 import com.udit.models.Person;
 
-public class DatabaseManager {
+public class PersonManager {
 
 	private static Map<String, Person> personMap;
 

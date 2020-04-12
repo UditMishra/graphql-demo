@@ -6,18 +6,18 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import com.udit.dbs.DatabaseManager;
+import com.udit.dbs.PersonManager;
 import com.udit.models.Person;
 
 @Service
 public class PersonService {
 
 	public List<Person> getPersons() {
-		return new ArrayList<>(DatabaseManager.getPersonMap().values());
+		return new ArrayList<>(PersonManager.getPersonMap().values());
 	}
 
 	public Person getPersonBySSN(String ssn) {
-		return DatabaseManager.getPersonMap().get(ssn);
+		return PersonManager.getPersonMap().get(ssn);
 	}
 
 	public Person getPersonByFirstName(String firstName) {

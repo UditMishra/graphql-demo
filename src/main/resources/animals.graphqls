@@ -1,0 +1,16 @@
+interface Animal {
+	classification: String
+	sound: String
+}
+
+type Cat {
+	classification: String
+	sound: String	
+	type: String
+}
+
+type Dog {
+	classification: String
+	sound: String
+	breed: String
+}
