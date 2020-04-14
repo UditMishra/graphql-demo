@@ -3,13 +3,13 @@ interface Animal {
 	sound: String
 }
 
-type Cat {
+type Cat implements Animal{
 	classification: String
 	sound: String	
 	type: String
 }
 
-type Dog {
+type Dog implements Animal{
 	classification: String
 	sound: String
 	breed: String
